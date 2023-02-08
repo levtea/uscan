@@ -1,0 +1,6 @@
+[submodule "uscan_frontend"]
+	path = uscan_frontend
+	url = git@github.com:uchainorg/uscan_frontend.git
+[submodule "files"]
+	path = pkg/files
+	url = git@github.com:uchainorg/uscan_compile_tools.git
