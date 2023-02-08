@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   uscan-backend:
-    image: uscan:latest
+    image: uchainorg/uscan:latest
     restart: always
     command: ["--rpc_urls=wss://testnet.ankr.com/ws","--db_path=/app/uscandb"]
     volumes:
