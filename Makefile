@@ -8,6 +8,7 @@ shortDate=$(shell git log -1 --format="%at" | xargs -I{} date -d @{} +%Y%m%d)
 Email=$(shell git log --pretty=format:%ae $(Commit) -1)
 Ver=$(shell echo $(Branch)-$(Commit))
 GoVersion=$(shell go version )
+REPO ?= uchainorg/uscan
 
 .PHONY: all-build
 all-build: pull-submodule frontend-build statik build
@@ -51,12 +52,12 @@ start: compile
 .PHONY: docker-build
 docker-build:
 	docker build \
-	-t ankrnetwork/uscan:$(Ver) .
-	docker tag ankrnetwork/uscan:$(Ver) ankrnetwork/uscan:latest
+	-t $(REPO):$(Ver) .
+	docker tag $(REPO):$(Ver) $(REPO):latest
 	docker image prune -f --filter label=stage=builder
 
 .PHONY: docker-release
 docker-release: build
-	docker push ankrnetwork/uscan:$(Ver)
-	docker push ankrnetwork/uscan:latest
+	docker push $(REPO):$(Ver)
+	docker push $(REPO):latest
 

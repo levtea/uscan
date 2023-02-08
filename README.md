@@ -11,7 +11,7 @@ bin/uscan --rpc_urls "wss://testnet.ankr.com/ws"
 ### 二、docker image & running
 ```
 make docker-build
-docker run -it -p 4322:4322 ankrnetwork/uscan:latest --rpc_urls "wss://testnet.ankr.com/ws" 
+docker run -it -p 4322:4322 uchainorg/uscan:latest --rpc_urls "wss://testnet.ankr.com/ws" 
 ```
 
 
