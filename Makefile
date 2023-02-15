@@ -19,7 +19,7 @@ pull-submodule:
 
 .PHONY: frontend-build
 frontend-build:
-	cd uscan_frontend && yarn && yarn build
+	cd uscan_frontend && npm run && npm run build
 
 .PHONY: statik
 statik:
